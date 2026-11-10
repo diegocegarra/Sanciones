@@ -1,0 +1,82 @@
+:root {
+    --bg-color: #f8f9fc;
+    --primary-color: #0d6efd; /* Azul Bootstrap */
+    --success-color: #198754; /* Verde Bootstrap */
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezado de la página */
+.page-header {
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.05);
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    color: #4e73df;
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Botón principal */
+.btn-nueva-empresa {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 50px; /* Botón en forma de píldora */
+    box-shadow: 0 4px 6px rgba(25, 135, 84, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-nueva-empresa:hover {
+    background-color: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(25, 135, 84, 0.3);
+    color: white;
+}
+
+/* Estilización del Modal */
+.custom-modal {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.custom-modal-header {
+    background-color: #f8f9fc;
+    border-bottom: 2px solid #eaecf4;
+    border-radius: 16px 16px 0 0;
+    padding: 1.2rem 1.5rem;
+}
+
+.custom-modal-title {
+    color: #4e73df;
+    font-weight: 700;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #d1d3e2;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #5a5c69;
+    font-size: 0.9rem;
+}

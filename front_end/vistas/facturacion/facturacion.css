@@ -1,0 +1,128 @@
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-button {
+      padding: 8px 16px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      cursor: pointer;
+
+    }
+    /* hoover al hacer click en la pestana */
+    .tab-button.active {
+      background: #000000ff;
+      color: white;
+    }
+
+/* efecto de boton de concurrir para moverse */
+    .btn-hover-shadow:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px); /* Eleva el botón sutilmente */
+    transition: all 0.3s ease;
+  }
+
+
+  /* ANIMACION LATERAL PARA EL MODAL DE SANCIONES EXTRA*/
+
+  /* Contenedor del modal configurado a la derecha */
+/* Forzamos que el modal se pegue a la derecha */
+#modalConcurrir.modal.fade .modal-dialog {
+    transform: translate(100%, 0) !important; /* Inicia fuera de la pantalla */
+    transition: transform 0.3s ease-out !important;
+    margin: 0;
+    margin-left: auto; /* Empuja a la derecha */
+    height: 100vh;
+}
+
+/* Cuando el modal tiene la clase 'show' (está abierto) */
+#modalConcurrir.modal.show .modal-dialog {
+    transform: translate(0, 0) !important; /* Entra a su posición original */
+}
+
+/* Ajustes del contenido para que sea pantalla completa vertical */
+#modalConcurrir .modal-content {
+    height: 100vh; /* Alto total de la ventana */
+    border-radius: 0; /* Opcional: quita bordes redondeados para estilo drawer */
+    border: none;
+    /* overflow-y: auto; */
+        overflow: visible !important;
+
+}
+/* Permitir que el body del modal sea el que scrollee si hay mucho contenido, 
+   pero que deje ver el dropdown */
+/* #modalConcurrir .modal-body {
+    overflow: visible !important;
+} */
+
+/* Controla el ancho del panel aquí */
+@media (min-width: 576px) {
+    #modalConcurrir .modal-dialog {
+        width: 450px; /* El ancho exacto que quieres */
+        max-width: 100rem;
+    }
+}
+
+/******* Dropdown otras sanciones */
+
+/* Dropdown */
+.dropdown-menu {
+    z-index: 3000 !important; /* Subimos el nivel por si acaso */
+    position: absolute !important; /* Asegura posicionamiento correcto */
+}
+
+/* Estilo del botón que simula el select */
+button.form-select.dropdown-toggle {
+    background-color: white !important;
+    background-image: none !important; /* Quita la flecha original de BS para usar el ::after */
+    padding-right: 1rem;
+}
+
+/* Forzar la flecha verde */
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: auto;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.4em solid #28a745; /* Color verde directamente aquí */
+    border-right: 0.4em solid transparent;
+    border-left: 0.4em solid transparent;
+}
+
+
+/* Borde verde para el "Select" */
+.border-success {
+    border-color: #28a745 !important;
+    cursor: pointer;
+}
+
+/* Color del Checkbox de Bootstrap en verde */
+.form-check-input:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Quitar el estilo por defecto de botón para que parezca un select */
+button.form-select {
+    background-color: white;
+    text-align: left;
+    appearance: none; /* Quita la flecha nativa para usar la de BS */
+}
+
+/* Forzar que la flecha aparezca si usas Bootstrap 5 */
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    color: #28a745; /* Tu verde */
+}
+
+/* Icono de flecha verde */
+.form-select::after {
+    border-top-color: #28a745;
+}

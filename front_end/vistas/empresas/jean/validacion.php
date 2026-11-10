@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de autogestion del IVSS</title>
+     <link href="styles3.css" rel="stylesheet">
+    <link rel="icon" href="ivss.png" type="image"> 
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <!-- CABECERA -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-lg-2 me-auto" href="#"> 
+       <img src="ivss.png" alt="Bootstrap" width="40" height="40">
+    </a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="empresa.html"> Empresas </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2 active" aria-current="page" href="validacion.html"> Validación </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="tareas.html"> Tareas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <a href="login.html" class="login-button"> Cerrar Sesión </a>
+       <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+  <!-- FINAL CABECERA -->
+
+  <!-- CUERPO -->
+  <section class="hero-section">
+
+    <!-- INICIO DE TABLA -->
+
+    <h2 class="text info-emphasis shadow p-3 mb-5 bg-body-tertiary rounded" id="texto">Agregar Factura</h2>
+    <h2 class="text info-emphasis shadow p-3 mb-5 bg-body-tertiary rounded" id="texto2">Facturas Registradas</h2>
+
+    <div class="row row-cols-2 row-cols-md 2 text info-emphasis shadow p-3 mb-5 sm-body rounded" id="tabla">
+      
+  <form action="insertar1.php" method="POST">
+
+    <label>A Nombre de: <input id="label1" type="text" name="nombre" required placeholder="Inserte nombres y apellidos del representante de la empresa"></label><br>
+    <label>Deuda: <input type="step=0.01" name="deuda" required placeholder="Inserte la deducción total de infracciones"></label><br>
+    <label>Iva: <input type="step=0.01" name="iva" required placeholder="Inserte Impuesto sobre el valor adquirido"></label><br>
+    <label>Monto total a pagar: <input type="step=0.01" name="total" required placeholder="Indique el monto total a pagar"></label><br>
+    <button type="submit" class="login-button">Guardar</button>
+
+  </form>
+
+  <div class="table-responsive">
+
+  <table class="table table-hover border border-dark-subtle">
+    <tr>
+      <th>Nro. de factura</th>
+      <th>Empresa</th>
+      <th>Deuda acumulada</th>
+      <th>Fecha de facturacion</th>
+    </tr>
+
+    <tr>
+      <td> asd </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+     <tr>
+      <td> asd </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+     <tr>
+      <td> asd </td>
+      <td>eqwe</td>
+      <td>sasd</td>
+      <td>asdd</td>
+    </tr>
+
+     <tr>
+      <td> asd </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <!-- Aquí se insertarán las filas desde PHP -->
+    <?php include 'mostrar_facturas.php'; ?>
+
+  </table>
+
+  <!-- FINAL DE TABLA -->
+
+   </div>
+  </div>
+  </section>
+
+  <!-- FINAL CUERPO -->
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

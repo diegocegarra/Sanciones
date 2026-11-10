@@ -1,0 +1,203 @@
+<?php
+require_once(__DIR__ . '/../../../back_end/config.php');
+require_once(FUNCIONES_TAREAS);
+
+$empresas = mostrarEmpresas($pdo);
+
+
+?>
+<!DOCTYPE html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Sistema de autogestion del IVSS</title>
+     		<link href="style.css" rel="stylesheet">
+    		<link rel="icon" href="recursos/ivss.png" type="image"> 
+    			<!-- BOOTSTRAP -->
+    			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    				<!-- FUENTE DE GOOGLE -->
+    				<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+  </head>
+   <body>
+
+   		<!-- SECCION LATERAL -->
+   		<div class="sidebar">
+   			<nav class="nav flex-column">
+
+   				<!-- PRIMER OPCION -->
+   				<a class="nav-link" href="../inicio.html">
+   					<span class="icon">
+   						<i class="bi bi-grid"></i>
+   					</span>
+   					<span class="description"> Inicio </span>
+   				</a>
+
+   				<!-- SEGUNDA OPCION -->
+   				<a class="nav-link" href="empleados.html">
+   					<span class="icon">
+   						<i class="bi bi-briefcase"></i>
+   					</span>
+   					<span class="description"> Empleados Asegurados </span>
+   				</a>
+
+   				<!-- TERCERA OPCION -->
+   				<a class="nav-link" id="activo" href="empresas.html">
+   					<span class="icon">
+   						<i class="bi bi-building-check"></i>
+   					</span>
+   					<span class="description" id="activo"> Empresas Aseguradas  </span>
+   				</a>				
+
+   				<!-- CUARTA OPCION -->
+   				<a class="nav-link" href="../tareas/tareas.html">
+   					<span class="icon">
+   						<i class="bi bi-clipboard-check"></i>
+   					</span>
+   					<span class="description"> Tareas </span>
+   				</a>	
+
+   				<!-- QUINTA OPCION MENU DESPLEGABLE-->
+   				<a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#submenu" aria-expanded="false" aria-controls="submenu">
+   					<span class="icon">
+   						<i class="bi bi-box-seam"></i>
+   					</span>
+   					<span class="description"> Orden de Pago <i class="bi bi-caret-down-fill"></i></span>
+   				</a>		
+
+   					<!-- OPCINES DEL SUBMENU -->
+   					<div class="sub-menu collapse" id="submenu">
+   						<a class="nav-link" href="corden.html">
+   							<span class="icon ">
+   								<i class="bi bi-clipboard2-plus"></i>
+   							</span>	
+   							<span class="description"> Crear orden de pago</span>
+   						</a>
+   						<a class="nav-link" href="caorden.html">
+   							<span class="icon ">
+   								<i class="bi bi-calculator"></i>
+   							</span>	
+   							<span class="description"> Calcular orden de pago </span>
+   						</a>
+   					</div>
+
+   				<!-- SEXTA OPCION -->
+
+   				<a class="nav-link" href="login.html">
+   					<span class="icon">
+   						<i class="bi bi-arrow-left-circle-fill"></i>
+   					</span>
+   					<span class="salida"> Salir </span>
+   				</a>	
+   			</nav>
+   		</div>
+   		<!-- FIN DE SECCION LATERAL -->
+
+   		<!-- CONTENEDOR -->
+   		<main class="main-content">
+   			<h2 aria-label="Hi! I'm a developer"> Bienvenidos a la Plataforna de Autogestión del IVSS&nbsp; <img src="recursos/ivss.png" alt="Bootstrap" width="40" height="40"> <span class="typewriter thick"></span> </h2>
+   			<p> Registro general de empresas aseguradas por el Instituto Venezolano del Seguro Social y su estado deudor</p>
+
+        <!-- tabla de empresas -->
+    <table class="table table-hover">
+    <thead>
+        <tr>
+
+        <th scope="col">#</th>
+        <th scope="col">RIF</th>
+        <th scope="col">Empresa</th>
+        <th scope="col">Direcion</th>
+        <th scope="col">Deuda</th>
+        <th scope="col">Industria</th>
+        <th scope="col">Estado</th>
+
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+           
+            <th scope="row">1</th>
+                <?php foreach($empresas as $empresa) {?>
+                   <td><?= $empresa['numero_patronal']?>J-5909023</td>
+                   <td><?= $empresa['nombre_empresa']?>OREO</td>
+                   <td><?= $empresa['direccion']?>Los Palos Grandes, Calle Reinosa</td>
+                   <td><?= $empresa['estado_deuda']?>22.345,00 BsS</td>
+                   <td><?= $empresa['industria']?>Alimentos</td>
+                   <td><?= $empresa['estado']?>Deudor</td>
+                  
+                   <form action="../../../back_end/tareas/pruebas_tareas/automatizaciones.php" method="get">
+                        
+                         <input type="hidden" name="accion" value="crear_tarea">
+                         
+                         <input type="hidden" name="id_empresa" value="<?= $empresa['id'] ?>">
+                         <input type="hidden" name="nombre_empresa" value="<?= $empresa['nombre_empresa'] ?>">
+                         <input type="hidden" name="estado_empresa" value="<?= $empresa['estado'] ?>">
+
+                           <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+                    </form>    
+          </tr>
+          <tr>
+            
+              <th scope="row">2</th>
+                <td>J-3878853</td>
+                <td>PEPSICO</td>
+                <td>Chacao, Av.Francisco de Miranda</td>
+                <td>15.486.52,55 BsS</td>
+                <td>Alimentos</td>
+                <td>Deudor</td>
+                   <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+          </tr> 
+          <tr>
+            
+              <th scope="row">3</th>
+                <td>J-003882</td>
+                <td>ISELITAS</td>
+                <td>Las Mercedes, Calle New York</td>
+                <td>15.234,23 BsS</td>
+                <td>Alimentos</td>
+                <td>Deudor</td>
+                   <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+          </tr>
+          <tr>
+            
+              <th scope="row">2</th>
+                <td>J-39950021</td>
+                <td>PDVSA</td>
+                <td>La Campiña</td>
+                <td>0,00 BsB</td>
+                <td>Crudo</td>
+                <td>Saldo</td>
+                   <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+          </tr> 
+          <tr>
+            
+              <th scope="row">2</th>
+                <td>J-77110029</td>
+                <td>SOY TECNO</td>
+                <td>Sabana Grande, El Recreo</td>
+                <td>0,00 BsS</td>
+                <td>ELECTRONICA</td>
+                <td>Saldo</td>
+                   <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+          </tr>
+          <tr>
+            
+              <th scope="row">2</th>
+                <td>J-77121229</td>
+                <td>FARMATODO</td>
+                <td>Chacao, Av.Francisco de Miranda</td>
+                <td>13.455.52,54 BsS</td>
+                <td>Farmaceutica-Alimentos</td>
+                <td>Deudor</td>
+                   <td><button type="submit" class="btn btn-outline-primary">Crear sancion</button></td>
+          </tr>
+
+
+   		</main>
+				 <!-- BOOTSTRAP -->
+  				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+   </body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de autogestion del IVSS</title>
+     <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="ivss.png" type="image"> 
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body id="cuerpo">
+
+  	<!-- CABECERA -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-lg-2 me-auto" href="#"> 
+    	 <img src="ivss.png" alt="Bootstrap" width="40" height="40">
+    </a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="empresa.html"> Empresas </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="validacion.html"> Validación </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="tareas.html"> Tareas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    	<a href="login.html" class="login-button"> Cerrar Sesión </a>
+    	 <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+	<!-- FINAL CABECERA -->
+
+	<!-- CUERPO -->
+	<section class="hero-section">
+
+ <!-- VERIFICAR QUE CUANDO SE ACTIVE EL HOVER LAS TARJETAS NO SE AGRANDEN TANTO -->
+
+	<div class="tarjeta"> 	
+		<div class="row row-cols-4 row-cols-md 2 g-4">
+  <div class="col" id="tarjeta1">
+    <div class="card">
+      <img src="trabajador.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> Empleados Afiliados </h5>
+        <p class="card-text"> Observar, reemplazar, añadir, modificar y eliminar sera posible desde <a href="empresa.html"> aquí </a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="tarjeta2">
+    <div class="card">
+      <img src="factura.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> Ordenes de Pago </h5>
+        <p class="card-text"> Revisa, analiza y crea las ordenes de pago <a href="validacion.html"> aquí </a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="tarjeta3">
+    <div class="card">
+      <img src="tarea.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> Tareas Pendientes  </h5>
+        <p class="card-text"> Delega o ponte al corriente las actividades pendientes por hacer <a href="tareas.html"> aquí </a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="tarjeta4">
+    <div class="card">
+      <img src="fondo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> Empresas Afiliadas </h5>
+        <p class="card-text"> Observa, añade, modifica o elimina las empresas que estan afiliadas al IVSS <a href="empresa.html"> aquí </a></p>
+      </div>
+    </div>
+  </div>
+</div>
+	</div>	
+		
+	</section>
+
+	<!-- FINAL CUERPO -->
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

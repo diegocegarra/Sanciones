@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de autogestion del IVSS</title>
+     <link href="styles1.css" rel="stylesheet">
+    <link rel="icon" href="ivss.png" type="image"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body id="cuerpo">
+ 
+    <!-- CABECERA -->
+    <nav class="navbar navbar-expand-lg fixed-top .bg-light">
+  <div class="container-fluid .bg-light">
+    <a class="navbar-brand mx-lg-2 me-auto" href="#"> 
+       <img src="ivss.png" alt="Bootstrap" width="40" height="40">
+    </a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="empresa.html"> Empresas </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="validacion.html"> Validación </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link mx-lg-2 active" aria-current="page" href="tareas.html"> Tareas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <a href="login.html" class="login-button"> Cerrar Sesión </a>
+       <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+  <!-- FINAL CABECERA -->
+
+  <!-- CUERPO -->
+  <section class="hero-section">
+        
+    <div class="container">
+      
+      <div class="row">
+        
+        <div class="col">
+            
+
+    <h1 class="text info-emphasis shadow p-3 mb-5 bg-body-tertiary rounded">LISTA DE TAREAS</h1>
+
+    <div class="datos text info-emphasis shadow p-3 mb-5 bg-body-tertiary rounded">
+        <p id="total">Total tareas: 0</p>
+        <p id="completadas">Tareas Completadas: 0</p>
+    </div>
+
+    <div class="contenedor text info-emphasis shadow p-3 mb-5 bg-body-tertiary rounded">
+
+        <form class="formulario" id="formulario">
+            <h4> Solicitud </h4>
+            <input type="text" id="tarea">
+            <input type="submit" value="Agregar">
+        </form>
+
+        <div class="tareas" id="tareas">
+
+            <div class="item-tarea">
+                <p>Tarea 1</p>
+                <div class="botones">
+                    <button class="eliminar" data-id="${item.id}">x</button>
+                    <button class="completada" data-id="${item.id}">✔</button>
+                </div>
+            </div>
+            <!-- <h5>~SIN TAREAS~</h5> -->
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+          
+
+        </div>
+
+      </div>
+
+    </div>    
+      
+  </section>
+
+  <!-- FINAL CUERPO -->
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mi_app_web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=nombre_base_datos
+      - DB_USERNAME=root
+      - DB_PASSWORD=tu_contraseña
+    networks:
+      - red-app
+
+  db:
+    image: mysql:8.0
+    container_name: mi_base_datos
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nombre_base_datos
+      MYSQL_ROOT_PASSWORD: tu_contraseña
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - red-app
+
+volumes:
+  db_data:
+
+networks:
+  red-app:
+    driver: bridge
